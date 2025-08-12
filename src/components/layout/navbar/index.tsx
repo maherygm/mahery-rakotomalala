@@ -7,19 +7,22 @@ import {
   Github,
   RotateCcw,
 } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export default function NavigationBar() {
   const [activeIndex, setActiveIndex] = useState(3); // Avatar actif par défaut
 
   const navItems = [
-    { icon: Home, label: "Accueil" },
+    { icon: Home, label: "Accueil", link: "/" },
     { icon: Terminal, label: "Terminal" },
-    { icon: Shield, label: "Sécurité" },
+    { icon: Shield, label: "Sécurité", link: "/skills" },
     { icon: null, label: "Profile", isAvatar: true }, // Avatar spécial
-    { icon: FileText, label: "Documents" },
+    { icon: FileText, label: "Documents", link: "projet" },
     { icon: Github, label: "GitHub" },
     { icon: RotateCcw, label: "Actualiser" },
   ];
+
+  const navigate = useNavigate();
 
   return (
     <div className="w-fit fixed z-50 bottom-2.5 left-1/2 transform -translate-x-1/2">
@@ -28,7 +31,10 @@ export default function NavigationBar() {
           {navItems.map((item, index) => (
             <button
               key={index}
-              onClick={() => setActiveIndex(index)}
+              onClick={() => {
+                setActiveIndex(index);
+                navigate(item.link || "/");
+              }}
               className={`
                 relative w-12 h-12 rounded-full flex items-center justify-center
                 transition-all duration-200 ease-in-out

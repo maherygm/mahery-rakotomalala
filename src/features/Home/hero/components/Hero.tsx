@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { BoxReveal } from "../../../../components/common/BoxReveal";
+import { InteractiveHoverButton } from "../../../../components/common/InteractiveHoverButton";
 
 export default function Hero() {
   const [, setMousePosition] = useState({ x: 0, y: 0 });
@@ -41,38 +42,37 @@ export default function Hero() {
       <div className="p-8">
         <div className="size-full max-w-lg items-center justify-center overflow-hidden pt-8">
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-            <p className="text-[3.5rem] font-semibold">
+            <p className="text-[4rem] font-semibold">
               Mahery Rakotomalala <span className="text-[#5046e6]">.</span>
             </p>
           </BoxReveal>
 
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
             <h2 className="mt-[.5rem] text-[1rem]">
-              UI library for{" "}
-              <span className="text-[#5046e6]">Design Engineers</span>
+              Développeur Front-End & Designer UI/UX Full Stack
             </h2>
           </BoxReveal>
 
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
             <div className="mt-6">
               <p>
-                -&gt; 20+ free and open-source animated components built with
-                <span className="font-semibold text-[#5046e6]">React</span>,
-                <span className="font-semibold text-[#5046e6]">Typescript</span>
-                ,
-                <span className="font-semibold text-[#5046e6]">
-                  Tailwind CSS
-                </span>
-                , and
-                <span className="font-semibold text-[#5046e6]">Motion</span>
-                . <br />
-                -&gt; 100% open-source, and customizable. <br />
+                Passionné par la création d’expériences web modernes,
+                performantes et accessibles.
+                <br />
+                Spécialisé en React, Typescript, Tailwind CSS et design
+                d’interfaces intuitives.
+                <br />
+                J’accompagne vos projets du prototypage à la mise en production,
+                avec une attention particulière au détail et à l’expérience
+                utilisateur.
               </p>
             </div>
           </BoxReveal>
 
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-            <button className="mt-[1.6rem] bg-[#5046e6]">Explore</button>
+            <InteractiveHoverButton className="mt-[1.6rem] bg-black border-black text-white hover:border-black">
+              Explore
+            </InteractiveHoverButton>
           </BoxReveal>
         </div>
       </div>

@@ -1,10 +1,14 @@
 import React from "react";
+import Hero from "../features/Skills/hero/components/Hero";
+import { ArcTimelineDemo } from "../components/layout/arcNavBar";
+import ContactSection from "../features/Home/footer/components/Explorer";
 
 const Skills: React.FC = () => {
   return (
     <div>
-      <h1>Skills</h1>
-      <p>This page will showcase your skills.</p>
+      <Hero />
+      <ArcTimelineDemo />
+      <ContactSection />
     </div>
   );
 };

@@ -15,9 +15,28 @@ export default function AppRoutes() {
             <Route index element={<Home />} />
             <Route path="/projet" element={<Project />} />
             <Route path="/skills" element={<Skills />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Suspense>
     </Router>
   );
 }
+
+const NotFound = () => {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-[60vh]">
+      <div className="bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-xl p-10 flex flex-col items-center gap-4 border border-gray-200 dark:border-gray-700 bento">
+        <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-600">
+          404
+        </h1>
+        <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">
+          Page Not Found
+        </h2>
+        <p className="text-gray-500 dark:text-gray-400">
+          The page you are looking for does not exist.
+        </p>
+      </div>
+    </div>
+  );
+};
