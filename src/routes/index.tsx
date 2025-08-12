@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import { Suspense, lazy } from "react";
+import ScrollToTop from "../utils/scrollToTop";
 
 const HomePage = lazy(() => import("../pages"));
 const Home = lazy(() => import("../pages/Home"));
@@ -9,6 +10,7 @@ const Skills = lazy(() => import("../pages/Skills"));
 export default function AppRoutes() {
   return (
     <Router>
+      <ScrollToTop />
       <Suspense
         fallback={
           <div className="flex items-center justify-center min-h-screen">
