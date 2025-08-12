@@ -50,7 +50,7 @@ export function HeroVideoDialogDemo() {
         className="block dark:hidden"
         animationStyle="from-center"
         videoSrc="https://www.youtube.com/embed/ZE9iFZFez4k"
-        thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+        thumbnailSrc="/codeScreen.png"
         thumbnailAlt="Hero Video"
       />
     </div>
