@@ -1,12 +1,5 @@
 import { useState } from "react";
-import {
-  Home,
-  Terminal,
-  Shield,
-  FileText,
-  Github,
-  RotateCcw,
-} from "lucide-react";
+import { Home, Shield, FileText, Github } from "lucide-react";
 import { useNavigate } from "react-router";
 
 export default function NavigationBar() {
@@ -14,19 +7,19 @@ export default function NavigationBar() {
 
   const navItems = [
     { icon: Home, label: "Accueil", link: "/" },
-    { icon: Terminal, label: "Terminal" },
+    // { icon: Terminal, label: "Terminal" },
     { icon: Shield, label: "Sécurité", link: "/skills" },
     { icon: null, label: "Profile", isAvatar: true }, // Avatar spécial
     { icon: FileText, label: "Documents", link: "projet" },
     { icon: Github, label: "GitHub" },
-    { icon: RotateCcw, label: "Actualiser" },
+    // { icon: RotateCcw, label: "Actualiser" },
   ];
 
   const navigate = useNavigate();
 
   return (
     <div className="w-fit fixed z-50 bottom-2.5 left-1/2 transform -translate-x-1/2">
-      <nav className="bg-gray-900 rounded-full px-4 py-3 shadow-xl">
+      <nav className="bg-gray-900 rounded-3xl px-4 py-3 shadow-xl">
         <div className="flex items-center space-x-2">
           {navItems.map((item, index) => (
             <button

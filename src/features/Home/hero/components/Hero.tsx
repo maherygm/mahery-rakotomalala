@@ -69,11 +69,11 @@ export default function Hero() {
             </div>
           </BoxReveal>
 
-          <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-            <InteractiveHoverButton className="mt-[1.6rem] bg-black border-black text-white hover:border-black">
-              Explore
-            </InteractiveHoverButton>
-          </BoxReveal>
+          <InteractiveHoverButton className="mt-[1.6rem] bg-black border-black text-white hover:border-black">
+            <a href="/jean_mahery.pdf" target="_blank">
+              Télécharger mon CV
+            </a>
+          </InteractiveHoverButton>
         </div>
       </div>
     </div>
