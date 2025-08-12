@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import { BoxReveal } from "../../../../components/common/BoxReveal";
 
 export default function Hero() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
