@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router";
 import NavigationBar from "../components/layout/navbar";
 import AnimatedCursor from "react-animated-cursor";
+import SpotifyMusicPlayer from "../components/layout/spotifyMusicSplayer";
 
 const HomePage: React.FC = () => {
   return (
@@ -36,6 +37,7 @@ const HomePage: React.FC = () => {
         ]}
       />
       <NavigationBar />
+      <SpotifyMusicPlayer />
       {/* <ArcTimelineDemo /> */}
       <Outlet />
     </main>

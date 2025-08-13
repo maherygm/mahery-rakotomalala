@@ -84,7 +84,7 @@ const Projet = () => {
       <div className="max-w-6xl mx-auto px-5 py-16">
         {/* Section Hero */}
         <section className="grid lg:grid-cols-3 gap-16 mb-20 items-center">
-          <div className="lg:col-span-2">
+          <div data-aos="fade-up" className="lg:col-span-2">
             <h1 className="text-4xl lg:text-6xl font-light leading-tight  mb-0 animate-fade-in-left">
               Driven by curiosity and a love for design, I create simple,
               functional, and visually striking digital experiences. As a
@@ -92,7 +92,10 @@ const Projet = () => {
             </h1>
           </div>
 
-          <div className="backdrop-blur-xl  border  rounded-3xl p-10  hover:transform hover:-translate-y-2 transition-all duration-300 animate-fade-in-right">
+          <div
+            data-aos="fade-up"
+            className="backdrop-blur-xl  border  rounded-3xl p-10  hover:transform hover:-translate-y-2 transition-all duration-300 animate-fade-in-right"
+          >
             <p className="leading-relaxed mb-6 text-base">
               The fusion of my passion for design, development, and seamless
               user experiences places me at the intersection of creativity and
@@ -112,7 +115,10 @@ const Projet = () => {
           <h2 className="text-5xl lg:text-7xl font-black mb-6 animate-fade-in-up">
             Impressive Works
           </h2>
-          <p className="text-lg mb-16 max-w-2xl leading-relaxed animate-fade-in-up-delay">
+          <p
+            data-aos="fade-up"
+            className="text-lg mb-16 max-w-2xl leading-relaxed animate-fade-in-up-delay"
+          >
             HERE'S A SELECTION OF PROJECTS THAT SHOWCASE MY PASSION FOR DESIGN
             AND DEVELOPMENT, REFLECTING CREATIVITY AND INNOVATION.
           </p>
@@ -120,6 +126,7 @@ const Projet = () => {
           <div className="grid md:grid-cols-2 gap-10 mb-16">
             {projects.map((project, index) => (
               <div
+                data-aos="fade-up"
                 key={project.id}
                 onClick={() => handleProjectClick(project.id)}
                 className="backdrop-blur-xl  border  rounded-3xl overflow-hidden cursor-pointer transform transition-all duration-500 hover:-translate-y-3  animate-fade-in-up group"

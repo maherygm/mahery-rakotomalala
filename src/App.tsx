@@ -1,9 +1,13 @@
+import { useEffect } from "react";
 import "./assets/css/index.css";
 import AppRoutes from "./routes";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
-  //const [count, setCount] = useState(0)
-
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return <AppRoutes />;
 }
 

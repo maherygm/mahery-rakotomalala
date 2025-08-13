@@ -7,7 +7,11 @@ const ContactSection = () => {
       <div className="bg-white px-6 py-16 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="mb-12">
+          <div
+            data-aos="fade-right"
+            data-aos-anchor-placement="center-center"
+            className="mb-12"
+          >
             <p className="text-gray-600 text-sm mb-4 font-medium">
               That's all for now.
             </p>
@@ -19,7 +23,11 @@ const ContactSection = () => {
           </div>
 
           {/* Ligne de séparation et bouton */}
-          <div className="flex items-center justify-between mb-16">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
+            className="flex items-center justify-between mb-16"
+          >
             <div className="flex-1 h-px bg-gray-300"></div>
             <div className="mx-8">
               <button className="w-32 h-32 md:w-40 md:h-40 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center text-white font-medium text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
@@ -31,7 +39,7 @@ const ContactSection = () => {
 
           {/* Informations de contact */}
           <div className="grid md:grid-cols-2 gap-12 md:gap-24">
-            <div>
+            <div data-aos="fade-up" data-aos-anchor-placement="center-center">
               <p className="text-gray-600 text-sm mb-2 font-medium">Email:</p>
               <a
                 href="mailto:maheryrak1234@gmail.com"
@@ -40,7 +48,7 @@ const ContactSection = () => {
                 maheryrak1234@gmail.com
               </a>
             </div>
-            <div>
+            <div data-aos="fade-up" data-aos-anchor-placement="center-center">
               <p className="text-gray-600 text-sm mb-2 font-medium">Phone:</p>
               <a
                 href="tel:+918248669086"
@@ -56,7 +64,11 @@ const ContactSection = () => {
       {/* Section Footer Noire */}
       <div className="bg-black px-6 py-16 md:px-16 lg:px-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex items-center justify-between mb-8">
+          <div
+            data-aos="fade-right"
+            data-aos-anchor-placement="center-center"
+            className="flex items-center justify-between mb-8"
+          >
             <p className="text-white text-lg md:text-xl font-light">
               your friendly chaos creator
             </p>
@@ -66,7 +78,7 @@ const ContactSection = () => {
           </div>
 
           {/* Nom géant */}
-          <div className="relative">
+          <div data-aos="fade-left" className="relative">
             <h1 className="text-[8rem] md:text-[12rem] lg:text-[16rem] xl:text-[20rem] font-bold text-white leading-none tracking-tight">
               Ashhhhhhhhhh
             </h1>

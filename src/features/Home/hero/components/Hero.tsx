@@ -56,22 +56,20 @@ export default function Hero() {
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
             <div className="mt-6">
               <p>
-                Passionné par la création d’expériences web modernes,
-                performantes et accessibles.
+                Passionate about creating modern, high-performance, and
+                accessible web experiences.
                 <br />
-                Spécialisé en React, Typescript, Tailwind CSS et design
-                d’interfaces intuitives.
-                <br />
-                J’accompagne vos projets du prototypage à la mise en production,
-                avec une attention particulière au détail et à l’expérience
-                utilisateur.
+                Specialized in React, Typescript, Tailwind CSS, and intuitive
+                interface design.
+                <br />I support your projects from prototyping to production,
+                with a strong attention to detail and user experience.
               </p>
             </div>
           </BoxReveal>
 
           <InteractiveHoverButton className="mt-[1.6rem] bg-black border-black text-white hover:border-black">
             <a href="/jean_mahery.pdf" target="_blank">
-              Télécharger mon CV
+              Download my CV
             </a>
           </InteractiveHoverButton>
         </div>
