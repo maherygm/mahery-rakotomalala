@@ -21,8 +21,8 @@ export default function AppRoutes() {
         <Routes>
           <Route path="/" element={<HomePage />}>
             <Route index element={<Home />} />
-            <Route path="/projet" element={<Project />} />
-            <Route path="/skills" element={<Skills />} />
+            <Route path="/projet" element={<Skills />} />
+            <Route path="/skills" element={<Project />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
-
+import webCup from "../../../../assets/images/superNovaWebCup.png";
+import sirius from "../../../../assets/images/sirius.png";
+import novawolrd from "../../../../assets/images/novawolrd.png";
+import Sentinelle from "../../../../assets/images/Sentinelle.png";
 type Particle = {
   id: number;
   left: number;
@@ -33,29 +36,35 @@ const Projet = () => {
 
   const projects = [
     {
-      id: "learnlogicify",
-      title: "LearnLogicify Landing Page",
-      logo: "LearnLogicify",
+      id: "webCup2025",
+      title: "WEB CUP 2025",
+      logo: "",
       gradient: "from-indigo-500 via-purple-500 to-pink-500",
+      img: webCup,
+      link: "https://supernova-webcup-2025.vercel.app",
     },
     {
-      id: "winzee",
-      title: "Winzee Web Chat application",
-      logo: "Winzee",
+      id: "hiu",
+      title: "Nova world Hackaton Inter Universitaire",
+      logo: "",
       gradient: "from-cyan-400 to-cyan-600",
+      img: novawolrd,
     },
     {
-      id: "chatgpt",
-      title: "ChatGPT clone",
-      logo: "GPT",
+      id: "sentinelle",
+      title: "Sentinelle",
+      logo: "",
       gradient: "from-green-400 to-emerald-500",
       isCircleLogo: true,
+      img: Sentinelle,
     },
     {
-      id: "gemini",
-      title: "Gemini Clone",
-      logo: "Gemini",
+      id: "Sirius",
+      title: "Sirius Education",
+      logo: "",
       gradient: "from-pink-400 to-yellow-400",
+      img: sirius,
+      link: "https://p4h-sirius.vercel.app",
     },
   ];
 
@@ -135,7 +144,15 @@ const Projet = () => {
                 }}
               >
                 <div
-                  className={`h-80 bg-gradient-to-r ${project.gradient} relative overflow-hidden`}
+                  className={`h-80  relative overflow-hidden`}
+                  style={{
+                    backgroundImage: `url(${project.img})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+
+                    backgroundBlendMode: "multiply",
+                  }}
                 >
                   <div className="absolute inset-0 flex items-center justify-center">
                     {project.isCircleLogo ? (
@@ -155,7 +172,7 @@ const Projet = () => {
                     <div className="w-6 h-6 border-2  rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
                       <ArrowRight className="w-3 h-3" />
                     </div>
-                    {project.title}
+                    <a href={project.link}>{project.title}</a>
                   </h3>
                 </div>
               </div>
