@@ -6,7 +6,8 @@ import { Rocket, Globe, Star, ActivityIcon } from "lucide-react";
 
 export function ArcTimelineDemo() {
   return (
-    <div className="py-6">
+    <div className="py-6 pt-44">
+      <h2 className="text-9xl font-bold text-center mb-6">My Adventures</h2>
       <ArcTimeline
         // className={cn(
         //   "[--step-line-active-color:#888888] dark:[--step-line-active-color:#9780ff]",
