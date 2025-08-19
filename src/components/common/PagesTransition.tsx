@@ -25,7 +25,13 @@ export default function PageTransition({
   const nbOfColumns = 5;
   return (
     <div className="page stairs" style={{ backgroundColor }}>
-      <motion.div {...anim(opacity)} className="transition-background" />
+      <motion.div {...anim(opacity)} className="transition-background">
+        <div className="w-full h-full flex items-center justify-center">
+          <p className="text-9xl z-[9999] text-white">
+            The Best OF the Design and Development
+          </p>
+        </div>
+      </motion.div>
       <div className="transition-container">
         {[...Array(nbOfColumns)].map((_, i) => {
           return <motion.div key={i} {...anim(expand, nbOfColumns - i)} />;

@@ -13,6 +13,8 @@ const SkillsSection = () => {
         { name: "React", color: "#61DAFB", symbol: "⚛" },
       ],
       size: "large",
+      fadeDirection: "up",
+      fadeDelay: 0,
     },
     {
       title: "Back-End Development",
@@ -25,6 +27,8 @@ const SkillsSection = () => {
         { name: "Ruby on Rails", color: "#CC0000", symbol: "RAILS" },
       ],
       size: "large",
+      fadeDirection: "down",
+      fadeDelay: 100,
     },
     {
       title: "Styling & Design",
@@ -36,6 +40,8 @@ const SkillsSection = () => {
         { name: "Bootstrap", color: "#7952B3", symbol: "B" },
       ],
       size: "medium",
+      fadeDirection: "left",
+      fadeDelay: 200,
     },
     {
       title: "Web Animations",
@@ -47,6 +53,8 @@ const SkillsSection = () => {
         { name: "Framer", color: "#0055FF", symbol: "F" },
       ],
       size: "medium",
+      fadeDirection: "right",
+      fadeDelay: 300,
     },
     {
       title: "Programming Languages",
@@ -59,6 +67,8 @@ const SkillsSection = () => {
         { name: "Git", color: "#F05032", symbol: "📁" },
       ],
       size: "large",
+      fadeDirection: "up",
+      fadeDelay: 400,
     },
     {
       title: "Database Management",
@@ -71,6 +81,8 @@ const SkillsSection = () => {
         { name: "Firebase", color: "#FFCA28", symbol: "🔥" },
       ],
       size: "large",
+      fadeDirection: "down",
+      fadeDelay: 500,
     },
     {
       title: "Cloud & Deployment",
@@ -84,6 +96,8 @@ const SkillsSection = () => {
         { name: "Vercel", color: "#000000", symbol: "▲" },
       ],
       size: "medium",
+      fadeDirection: "left",
+      fadeDelay: 600,
     },
     {
       title: "Testing & Debugging",
@@ -95,6 +109,8 @@ const SkillsSection = () => {
         { name: "Quality", color: "#E91E63", symbol: "✓" },
       ],
       size: "medium",
+      fadeDirection: "right",
+      fadeDelay: 70,
     },
     {
       title: "Mobile App Development",
@@ -106,6 +122,7 @@ const SkillsSection = () => {
         { name: "Git", color: "#F05032", symbol: "📋" },
       ],
       size: "medium",
+      fadeDirection: "right",
     },
     {
       title: "Version Control & Collaboration",
@@ -116,6 +133,7 @@ const SkillsSection = () => {
         { name: "Git", color: "#F05032", symbol: "📋" },
       ],
       size: "medium",
+      fadeDirection: "up",
     },
     {
       title: "UI/UX Design",
@@ -124,6 +142,7 @@ const SkillsSection = () => {
       icons: [{ name: "Figma", color: "#F24E1E", symbol: "🎨" }],
       tags: ["Prototyping", "Wireframing"],
       size: "large",
+      fadeDirection: "down",
     },
     {
       title: "Core Computer Science Concepts",
@@ -137,6 +156,7 @@ const SkillsSection = () => {
         "System Design",
       ],
       size: "large",
+      fadeDirection: "right",
     },
     {
       title: "Personal Development",
@@ -149,6 +169,7 @@ const SkillsSection = () => {
         "Leadership",
       ],
       size: "large",
+      fadeDirection: "left",
     },
   ];
 
@@ -164,6 +185,8 @@ const SkillsSection = () => {
     icons?: SkillIcon[];
     tags?: string[];
     size: "large" | "medium";
+    fadeDirection?: "up" | "down" | "left" | "right";
+    fadeDelay?: number;
   }
 
   const getGridClass = (size: SkillCard["size"]): string => {
@@ -213,10 +236,16 @@ const SkillsSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-auto">
           {skillCards.map((card, index) => (
             <div
+              data-aos={`fade-${card.fadeDirection || "up"}`}
+              data-aos-delay={`${card.fadeDelay || 50}`}
+              data-aos-duration="700"
+              // data-aos-once="true"
+              data-aos-easing="ease-in-out"
+              data-aos-anchor-placement="top-center"
               key={index}
               className={`${getGridClass(
                 card.size
-              )}  rounded-3xl p-6  transition-all duration-300   group`}
+              )}  rounded-3xl p-6 border-2 transition-all duration-300   group`}
             >
               {/* Icons */}
               {card.icons && (
@@ -228,12 +257,12 @@ const SkillsSection = () => {
               )}
 
               {/* Title */}
-              <h3 className="text-white text-xl md:text-2xl font-semibold mb-3 group-hover:text-blue-400 transition-colors duration-300">
+              <h3 className="text-black text-xl md:text-2xl font-semibold mb-3 group-hover:text-blue-400 transition-colors duration-300">
                 {card.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-4">
+              <p className="text-zinc-800 text-sm md:text-base leading-relaxed mb-4">
                 {card.description}
               </p>
 

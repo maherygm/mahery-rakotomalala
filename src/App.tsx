@@ -22,7 +22,7 @@ function App() {
     if (document.readyState === "complete") {
       handleLoad();
     } else {
-      window.addEventListener("load", handleLoad);
+      // window.addEventListener("load", handleLoad);
     }
 
     return () => {

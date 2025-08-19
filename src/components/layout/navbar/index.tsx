@@ -3,7 +3,7 @@ import { Home, Shield, FileText, Github } from "lucide-react";
 import { useNavigate } from "react-router";
 
 export default function NavigationBar() {
-  const [activeIndex, setActiveIndex] = useState(3); // Avatar actif par défaut
+  const [activeIndex, setActiveIndex] = useState(2); // Avatar actif par défaut
 
   const navItems = [
     { icon: Home, label: "Accueil", link: "/" },

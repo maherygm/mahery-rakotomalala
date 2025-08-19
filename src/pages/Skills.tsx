@@ -5,7 +5,7 @@ import ContactSection from "../features/Home/footer/components/Explorer";
 
 const Skills: React.FC = () => {
   return (
-    <div>
+    <div className="bg-zinc-100">
       <Hero />
       <ArcTimelineDemo />
       <ContactSection />
