@@ -1,6 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router";
-import { Suspense, lazy } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router";
+import { lazy } from "react";
 import ScrollToTop from "../utils/scrollToTop";
+import { AnimatePresence } from "framer-motion";
+import PageTransition from "../components/common/PagesTransition";
 
 const HomePage = lazy(() => import("../pages"));
 const Home = lazy(() => import("../pages/Home"));
@@ -11,23 +18,54 @@ export default function AppRoutes() {
   return (
     <Router>
       <ScrollToTop />
-      <Suspense
-        fallback={
-          <div className="flex items-center justify-center min-h-screen">
-            <img src="/loading.gif" alt="" />
-          </div>
-        }
-      >
-        <Routes>
-          <Route path="/" element={<HomePage />}>
-            <Route index element={<Home />} />
-            <Route path="/projet" element={<Skills />} />
-            <Route path="/skills" element={<Project />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </Suspense>
+      <AnimatedRoutes />
     </Router>
+  );
+}
+
+// 👉 On crée un composant séparé qui gère AnimatePresence + useLocation
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route
+          path="/"
+          element={
+            <PageTransition>
+              <HomePage />
+            </PageTransition>
+          }
+        >
+          <Route
+            index
+            element={
+              <PageTransition>
+                <Home />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="projet"
+            element={
+              <PageTransition>
+                <Skills />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="skills"
+            element={
+              <PageTransition>
+                <Project />
+              </PageTransition>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </AnimatePresence>
   );
 }
 

@@ -9,7 +9,7 @@ const HomePage: React.FC = () => {
     <main>
       <AnimatedCursor
         innerSize={8}
-        outerSize={8}
+        outerSize={35}
         color="193, 11, 111"
         outerAlpha={0.2}
         innerScale={0.7}
@@ -35,6 +35,9 @@ const HomePage: React.FC = () => {
             outerScale: 5,
           },
         ]}
+        outerStyle={{
+          mixBlendMode: "exclusion",
+        }}
       />
       <NavigationBar />
       <SpotifyMusicPlayer />
@@ -43,5 +46,4 @@ const HomePage: React.FC = () => {
     </main>
   );
 };
-
 export default HomePage;

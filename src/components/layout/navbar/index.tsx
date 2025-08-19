@@ -18,7 +18,7 @@ export default function NavigationBar() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-fit fixed z-50 bottom-2.5 left-1/2 transform -translate-x-1/2">
+    <div className="w-fit fixed z-[100] bottom-2.5 left-1/2 transform -translate-x-1/2">
       <nav className="bg-gray-900 rounded-3xl px-4 py-3 shadow-xl">
         <div className="flex items-center space-x-2">
           {navItems.map((item, index) => (
