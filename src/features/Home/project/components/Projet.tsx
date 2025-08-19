@@ -74,7 +74,7 @@ const Projet = () => {
   };
 
   return (
-    <div className="min-h-screen  overflow-hidden relative">
+    <div className="min-h-screen z-50 overflow-hidden relative">
       {/* Particules flottantes */}
       {particles.map((particle) => (
         <div

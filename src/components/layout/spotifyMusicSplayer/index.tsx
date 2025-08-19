@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Music2Icon, StopCircle, SkipForward } from "lucide-react";
+import { Music2Icon, SkipForward, X } from "lucide-react";
 
 const SpotifyMusicPlayer = () => {
   const tracks = [
@@ -51,7 +51,7 @@ const SpotifyMusicPlayer = () => {
               className="text-gray-500 hover:text-red-500"
               title="Close player"
             >
-              <StopCircle />
+              <X />
             </button>
           </div>
         </div>
