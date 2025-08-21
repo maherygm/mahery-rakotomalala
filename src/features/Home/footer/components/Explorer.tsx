@@ -37,6 +37,13 @@ const ContactSection = () => {
             <div className="flex-1 h-px bg-gray-300"></div>
           </div>
 
+          <div>
+            {/* Player de streaming */}
+            <div className="mb-12">
+              <Player />
+            </div>
+          </div>
+
           {/* Informations de contact */}
           <div className="grid md:grid-cols-2 gap-12 md:gap-24">
             <div data-aos="fade-up" data-aos-anchor-placement="center-center">
@@ -99,3 +106,46 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function Player() {
+  return (
+    <div>
+      <h1>Streaming Firebase HLS</h1>
+      <HlsPlayer
+        src="https://livestreamingvideo.web.app/videos/publicite/index.m3u8
+"
+      />
+    </div>
+  );
+}
+
+import { useEffect, useRef } from "react";
+import Hls from "hls.js";
+
+type HlsPlayerProps = {
+  src: string;
+};
+
+const HlsPlayer: React.FC<HlsPlayerProps> = ({ src }) => {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(src);
+      hls.attachMedia(videoRef.current);
+
+      // Clean-up à la destruction du composant
+      return () => {
+        hls.destroy();
+      };
+    } else if (videoRef.current.canPlayType("application/vnd.apple.mpegurl")) {
+      videoRef.current.src = src;
+    }
+  }, [src]);
+
+  return <video ref={videoRef} controls style={{ width: "100%" }} />;
+};
