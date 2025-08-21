@@ -37,12 +37,11 @@ const ContactSection = () => {
             <div className="flex-1 h-px bg-gray-300"></div>
           </div>
 
-          <div>
-            {/* Player de streaming */}
+          {/* <div>
             <div className="mb-12">
               <Player />
             </div>
-          </div>
+          </div> */}
 
           {/* Informations de contact */}
           <div className="grid md:grid-cols-2 gap-12 md:gap-24">
@@ -113,7 +112,7 @@ function Player() {
     <div>
       <h1>Streaming Firebase HLS</h1>
       <HlsPlayer
-        src="https://livestreamingvideo-71979.web.app/videos/publicite/index.m3u8
+        src="http://127.0.0.1:5000/videos/publicite/index.m3u8
 "
       />
     </div>
