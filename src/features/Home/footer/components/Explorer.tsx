@@ -113,7 +113,7 @@ function Player() {
     <div>
       <h1>Streaming Firebase HLS</h1>
       <HlsPlayer
-        src="https://livestreamingvideo.web.app/videos/publicite/index.m3u8
+        src="https://livestreamingvideo-71979.web.app/videos/publicite/index.m3u8
 "
       />
     </div>
