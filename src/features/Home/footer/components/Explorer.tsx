@@ -107,45 +107,45 @@ const ContactSection = () => {
 
 export default ContactSection;
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function Player() {
-  return (
-    <div>
-      <h1>Streaming Firebase HLS</h1>
-      <HlsPlayer
-        src="http://livestreamingvideo.web.app/videos/publicite/index.m3u8
-"
-      />
-    </div>
-  );
-}
+// // eslint-disable-next-line @typescript-eslint/no-unused-vars
+// function Player() {
+//   return (
+//     <div>
+//       <h1>Streaming Firebase HLS</h1>
+//       <HlsPlayer
+//         src="http://livestreamingvideo.web.app/videos/publicite/index.m3u8
+// "
+//       />
+//     </div>
+//   );
+// }
 
-import { useEffect, useRef } from "react";
-import Hls from "hls.js";
+// import { useEffect, useRef } from "react";
+// import Hls from "hls.js";
 
-type HlsPlayerProps = {
-  src: string;
-};
+// type HlsPlayerProps = {
+//   src: string;
+// };
 
-const HlsPlayer: React.FC<HlsPlayerProps> = ({ src }) => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+// const HlsPlayer: React.FC<HlsPlayerProps> = ({ src }) => {
+//   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  useEffect(() => {
-    if (!videoRef.current) return;
+//   useEffect(() => {
+//     if (!videoRef.current) return;
 
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(src);
-      hls.attachMedia(videoRef.current);
+//     if (Hls.isSupported()) {
+//       const hls = new Hls();
+//       hls.loadSource(src);
+//       hls.attachMedia(videoRef.current);
 
-      // Clean-up à la destruction du composant
-      return () => {
-        hls.destroy();
-      };
-    } else if (videoRef.current.canPlayType("application/vnd.apple.mpegurl")) {
-      videoRef.current.src = src;
-    }
-  }, [src]);
+//       // Clean-up à la destruction du composant
+//       return () => {
+//         hls.destroy();
+//       };
+//     } else if (videoRef.current.canPlayType("application/vnd.apple.mpegurl")) {
+//       videoRef.current.src = src;
+//     }
+//   }, [src]);
 
-  return <video ref={videoRef} controls style={{ width: "100%" }} />;
-};
+//   return <video ref={videoRef} controls style={{ width: "100%" }} />;
+// };
