@@ -7,7 +7,9 @@ import { Rocket, Globe, Star, ActivityIcon } from "lucide-react";
 export function ArcTimelineDemo() {
   return (
     <div className="py-6 pt-44">
-      <h2 className="text-9xl font-bold text-center mb-6">My Adventures</h2>
+      <h2 className="text-4xl md:text-9xl font-bold text-center mb-6">
+        My Adventures
+      </h2>
       <ArcTimeline
         // className={cn(
         //   "[--step-line-active-color:#888888] dark:[--step-line-active-color:#9780ff]",
@@ -20,7 +22,7 @@ export function ArcTimelineDemo() {
         //   "[--description-color:#555555] dark:[--description-color:#d4d4d4]"
         // )}
         data={TIMELINE}
-        defaultActiveStep={{ time: "2025 Q2", stepIndex: 0 }}
+        //  defaultActiveStep={{ time: "2025 Q2", stepIndex: 0 }}
         arcConfig={{
           circleWidth: 4500,
           angleBetweenMinorSteps: 0.4,

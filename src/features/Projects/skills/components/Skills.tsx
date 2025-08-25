@@ -149,10 +149,11 @@ const SkillsSection = () => {
     fadeDelay?: number;
   }
 
+  // ✅ Adapter le grid span en fonction du responsive
   const getGridClass = (size: SkillCard["size"]): string => {
     switch (size) {
       case "large":
-        return "col-span-2 row-span-2";
+        return "col-span-1 sm:col-span-2 row-span-1 sm:row-span-2";
       case "medium":
         return "col-span-1 row-span-1";
       default:
@@ -168,13 +169,13 @@ const SkillsSection = () => {
 
     return (
       <div
-        className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-sm transition-all duration-300 hover:scale-110"
+        className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-white font-bold text-sm sm:text-base transition-all duration-300 hover:scale-110"
         style={{
           backgroundColor: isEmoji ? "rgba(255,255,255,0.1)" : icon.color,
         }}
       >
         {isEmoji ? (
-          <span className="text-2xl">{icon.symbol}</span>
+          <span className="text-xl sm:text-2xl">{icon.symbol}</span>
         ) : (
           <span
             className={`${
@@ -191,25 +192,28 @@ const SkillsSection = () => {
   };
 
   return (
-    <div className=" min-h-screen p-4 md:p-8">
+    <div className="min-h-screen p-4 sm:p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-auto">
+        <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+          My Skills
+        </h1>
+        {/* ✅ Grid responsive : 1 col sur mobile, 2 en sm, 4 en md+ */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-auto">
           {skillCards.map((card, index) => (
             <div
               data-aos={`fade-${card.fadeDirection || "up"}`}
               data-aos-delay={`${card.fadeDelay || 50}`}
               data-aos-duration="700"
-              // data-aos-once="true"
               data-aos-easing="ease-in-out"
               data-aos-anchor-placement="top-center"
               key={index}
               className={`${getGridClass(
                 card.size
-              )}  rounded-3xl p-6 border-2 transition-all duration-300   group`}
+              )} rounded-2xl sm:rounded-3xl p-4 sm:p-6 border-2 transition-all duration-300 group bg-white`}
             >
               {/* Icons */}
               {card.icons && (
-                <div className="flex flex-wrap gap-3 mb-6">
+                <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6">
                   {card.icons.map((icon, iconIndex) => (
                     <TechIcon key={iconIndex} icon={icon} />
                   ))}
@@ -217,22 +221,22 @@ const SkillsSection = () => {
               )}
 
               {/* Title */}
-              <h3 className="text-black text-xl md:text-2xl font-semibold mb-3 group-hover:text-blue-400 transition-colors duration-300">
+              <h3 className="text-black text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-3 group-hover:text-blue-500 transition-colors duration-300">
                 {card.title}
               </h3>
 
               {/* Description */}
-              <p className="text-zinc-800 text-sm md:text-base leading-relaxed mb-4">
+              <p className="text-zinc-800 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">
                 {card.description}
               </p>
 
-              {/* Tags for certain cards */}
+              {/* Tags */}
               {card.tags && (
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-2 mt-2 sm:mt-4">
                   {card.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-3 py-1 bg-gray-700 text-gray-300 text-xs rounded-full border border-gray-600 hover:border-blue-500 transition-colors duration-300"
+                      className="px-2 sm:px-3 py-1 bg-gray-700 text-gray-300 text-xs sm:text-sm rounded-full border border-gray-600 hover:border-blue-500 transition-colors duration-300"
                     >
                       {tag}
                     </span>

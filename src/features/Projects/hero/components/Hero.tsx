@@ -6,20 +6,10 @@ import { cn } from "../../../../utils/cn";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen  text-black overflow-hidden">
-      {/* Background avec effet parallaxe subtil */}
-      {/* <div
-               className="absolute inset-0 bg-gradient-to-br from-gray-200 via-gray-100 to-gray-300"
-               style={{
-                 transform: `translate(${mousePosition.x * 0.01}px, ${
-                   mousePosition.y * 0.01
-                 }px)`,
-               }}
-             /> */}
-
-      {/* Header */}
+    <div className="relative  flex flex-col justify-center-safe md:block  min-h-screen text-black overflow-hidden">
+      {/* Background animé */}
       <FlickeringGrid
-        className="absolute inset-0 z-0 w-screen h-screen"
+        className="absolute inset-0 z-0 w-full h-full"
         squareSize={4}
         gridGap={6}
         color="#6B7280"
@@ -28,14 +18,19 @@ const Hero = () => {
         height={800}
         width={800}
       />
+
       <DotPattern
         className={cn(
           "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
         )}
       />
-      <header className="relative z-10 flex justify-between items-start p-8 ">
-        <div className="text-sm font-light">@ Code by Mahery Rakotomalala</div>
-        <div className="text-right text-black text-sm font-light max-w-md leading-relaxed">
+
+      {/* Header responsive */}
+      <header className="relative z-10 flex flex-col md:flex-row justify-between items-start gap-4 p-4 sm:p-6 md:p-8">
+        <div className="text-xs sm:text-sm font-light">
+          @ Code by Mahery Rakotomalala
+        </div>
+        <div className="text-left md:text-right text-xs sm:text-sm text-black font-light max-w-lg leading-relaxed">
           Passionate Creative Designer and Developer, dedicated to
           <br />
           crafting innovative solutions and exceptional digital experiences
@@ -44,13 +39,15 @@ const Hero = () => {
         </div>
       </header>
 
-      <div className="p-8  flex flex-col gap-6 justify-center items-center">
+      {/* Hero content */}
+      <div className="relative z-10 px-4 sm:px-8 flex flex-col gap-6 justify-center items-center text-center">
         <SparklesText>
-          <h1 className="text-9xl w-fit text-center">
+          <h1 className="font-bold leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
             Skill that Fuel My Passion
           </h1>
         </SparklesText>
-        <InteractiveHoverButton className="mt-[1.6rem] bg-black border-black text-white hover:border-black">
+
+        <InteractiveHoverButton className="mt-4 sm:mt-6 bg-black border-black text-white hover:border-black text-sm sm:text-base px-4 py-2">
           Explore more
         </InteractiveHoverButton>
       </div>

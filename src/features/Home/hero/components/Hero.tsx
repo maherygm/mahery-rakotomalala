@@ -16,21 +16,13 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bannerImage overflow-hidden">
-      {/* Background avec effet parallaxe subtil */}
-      {/* <div
-        className="absolute inset-0 bg-gradient-to-br from-gray-200 via-gray-100 to-gray-300"
-        style={{
-          transform: `translate(${mousePosition.x * 0.01}px, ${
-            mousePosition.y * 0.01
-          }px)`,
-        }}
-      /> */}
-
+    <div className="relative flex flex-col justify-evenly md:block min-h-screen bannerImage overflow-hidden">
       {/* Header */}
-      <header className="relative z-10 flex justify-between items-start p-8 text-gray-600">
-        <div className="text-sm font-light">@ Code by Mahery Rakotomalala</div>
-        <div className="text-right text-sm font-light max-w-md leading-relaxed">
+      <header className="relative z-10 flex flex-col md:flex-row justify-between items-start gap-4 p-6 md:p-8 text-gray-600">
+        <div className="text-xs sm:text-sm font-light">
+          @ Code by Mahery Rakotomalala
+        </div>
+        <div className="text-left md:text-right text-xs sm:text-sm font-light max-w-lg leading-relaxed">
           Passionate Creative Designer and Developer, dedicated to
           <br />
           crafting innovative solutions and exceptional digital experiences
@@ -39,36 +31,42 @@ export default function Hero() {
         </div>
       </header>
 
-      <div className="p-8">
-        <div className="size-full max-w-lg items-center justify-center overflow-hidden pt-8">
+      {/* Hero content */}
+      <div className="p-6 sm:p-8">
+        <div className="w-full max-w-2xl items-center justify-center overflow-hidden pt-8">
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-            <p className="text-[4rem] font-semibold">
+            <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
               Mahery Rakotomalala <span className="text-[#5046e6]">.</span>
             </p>
           </BoxReveal>
 
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-            <h2 className="mt-[.5rem] text-[1rem]">
+            <h2 className="mt-2 text-sm sm:text-base md:text-lg lg:text-xl font-medium">
               Développeur Front-End & Designer UI/UX Full Stack
             </h2>
           </BoxReveal>
 
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-            <div className="mt-6">
+            <div className="mt-4 text-sm sm:text-base leading-relaxed">
               <p>
                 Passionate about creating modern, high-performance, and
                 accessible web experiences.
-                <br />
+                <br className="hidden sm:block" />
                 Specialized in React, Typescript, Tailwind CSS, and intuitive
                 interface design.
-                <br />I support your projects from prototyping to production,
-                with a strong attention to detail and user experience.
+                <br className="hidden sm:block" />I support your projects from
+                prototyping to production, with a strong attention to detail and
+                user experience.
               </p>
             </div>
           </BoxReveal>
 
-          <InteractiveHoverButton className="mt-[1.6rem] bg-black border-black text-white hover:border-black">
-            <a href="/jean_mahery.pdf" target="_blank">
+          <InteractiveHoverButton className="mt-6 bg-black border-black text-white hover:border-black text-sm sm:text-base px-4 py-2">
+            <a
+              href="/jean_mahery.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Download my CV
             </a>
           </InteractiveHoverButton>
