@@ -38,9 +38,10 @@ const ContactSection = () => {
           </div>
 
           {/* <div>
+             Player de streaming
             <div className="mb-12">
               <Player />
-            </div>
+            </div> 
           </div> */}
 
           {/* Informations de contact */}
@@ -112,7 +113,7 @@ function Player() {
     <div>
       <h1>Streaming Firebase HLS</h1>
       <HlsPlayer
-        src="http://127.0.0.1:5000/videos/publicite/index.m3u8
+        src="http://livestreamingvideo.web.app/videos/publicite/index.m3u8
 "
       />
     </div>
