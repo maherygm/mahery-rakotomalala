@@ -15,7 +15,9 @@ const Loader = ({ progress }: { progress: number }) => {
         flexDirection: "column",
       }}
     >
-      {/* <div style={{ fontSize: "2rem", marginBottom: "1rem" }}>{progress}%</div> */}
+      <div style={{ fontSize: "2rem", marginBottom: "1rem" }}>
+        Chargement...
+      </div>
       <div
         style={{
           width: "200px",
