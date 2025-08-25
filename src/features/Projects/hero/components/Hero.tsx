@@ -6,7 +6,7 @@ import { cn } from "../../../../utils/cn";
 
 const Hero = () => {
   return (
-    <div className="relative  flex flex-col justify-center-safe md:block  min-h-screen text-black overflow-hidden">
+    <div className="relative  flex flex-col justify-center-safe  md:block  min-h-screen text-black overflow-hidden">
       {/* Background animé */}
       <FlickeringGrid
         className="absolute inset-0 z-0 w-full h-full"
@@ -40,7 +40,7 @@ const Hero = () => {
       </header>
 
       {/* Hero content */}
-      <div className="relative z-10 px-4 sm:px-8 flex flex-col gap-6 justify-center items-center text-center">
+      <div className="relative h-[75vh]  z-10 px-4 sm:px-8 flex flex-col gap-6 justify-center items-center text-center">
         <SparklesText>
           <h1 className="font-bold leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
             Skill that Fuel My Passion

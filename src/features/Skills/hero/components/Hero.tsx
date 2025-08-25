@@ -27,7 +27,7 @@ const Hero = () => {
         </SparklesText>
 
         {/* Video */}
-        <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 mt-6">
+        <div className="w-full sm:w-3/4 md:w-5/6  mt-6">
           <HeroVideoDialogDemo />
         </div>
       </div>
