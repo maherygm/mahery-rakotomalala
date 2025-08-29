@@ -4,58 +4,96 @@ import { useNavigate } from "react-router";
 
 export default function NavigationBar() {
   const [activeIndex, setActiveIndex] = useState(2); // Avatar actif par défaut
+  const navigate = useNavigate();
 
   const navItems = [
     { icon: Home, label: "Accueil", link: "/" },
     { icon: Shield, label: "Sécurité", link: "/skills" },
     { icon: null, label: "Profile", isAvatar: true }, // Avatar spécial
     { icon: FileText, label: "Documents", link: "/projet" },
-    { icon: Github, label: "GitHub" },
+    {
+      icon: Github,
+      label: "GitHub",
+      link: "https://github.com/maherygm",
+      external: true, // on distingue un lien externe
+    },
   ];
-
-  const navigate = useNavigate();
 
   return (
     <div className="w-fit fixed z-[100] bottom-2.5 left-1/2 transform -translate-x-1/2">
       <nav className="bg-gray-900 rounded-3xl px-3 sm:px-4 py-2 sm:py-3 shadow-xl">
         <div className="flex items-center space-x-1 sm:space-x-2">
-          {navItems.map((item, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                setActiveIndex(index);
-                if (item.link) navigate(item.link);
-              }}
-              className={`
-                relative w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center
-                transition-all duration-200 ease-in-out
-                ${
-                  activeIndex === index
-                    ? item.isAvatar
-                      ? "bg-blue-400"
-                      : "bg-gray-200 text-gray-900"
-                    : "text-gray-400 hover:text-gray-200 hover:bg-gray-800"
-                }
-              `}
-              aria-label={item.label}
-            >
-              {item.isAvatar ? (
-                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white flex items-center justify-center">
-                  <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
-                    <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-white flex items-center justify-center">
-                      <div className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-gray-800"></div>
+          {navItems.map((item, index) => {
+            const isActive = activeIndex === index;
+
+            // ✅ Avatar spécial
+            if (item.isAvatar) {
+              return (
+                <button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className={`relative w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-200 ease-in-out ${
+                    isActive ? "bg-blue-400" : "text-gray-400 hover:bg-gray-800"
+                  }`}
+                  aria-label={item.label}
+                >
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white flex items-center justify-center">
+                    <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-white flex items-center justify-center">
+                        <div className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-gray-800"></div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ) : item.icon ? (
-                <item.icon size={18} className="sm:size-[20]" />
-              ) : null}
+                </button>
+              );
+            }
 
-              {activeIndex === index && !item.isAvatar && (
-                <div className="absolute inset-0 rounded-full border-2 border-gray-200 opacity-50"></div>
-              )}
-            </button>
-          ))}
+            // ✅ Liens externes
+            if (item.external) {
+              return (
+                <a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setActiveIndex(index)}
+                  className={`relative w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-200 ease-in-out ${
+                    isActive
+                      ? "bg-gray-200 text-gray-900"
+                      : "text-gray-400 hover:text-gray-200 hover:bg-gray-800"
+                  }`}
+                  aria-label={item.label}
+                >
+                  <item.icon size={18} className="sm:size-[20]" />
+                  {isActive && (
+                    <div className="absolute inset-0 rounded-full border-2 border-gray-200 opacity-50"></div>
+                  )}
+                </a>
+              );
+            }
+
+            // ✅ Liens internes
+            return (
+              <button
+                key={index}
+                onClick={() => {
+                  setActiveIndex(index);
+                  if (item.link) navigate(item.link);
+                }}
+                className={`relative w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-200 ease-in-out ${
+                  isActive
+                    ? "bg-gray-200 text-gray-900"
+                    : "text-gray-400 hover:text-gray-200 hover:bg-gray-800"
+                }`}
+                aria-label={item.label}
+              >
+                {item.icon && <item.icon size={18} className="sm:size-[20]" />}
+                {isActive && (
+                  <div className="absolute inset-0 rounded-full border-2 border-gray-200 opacity-50"></div>
+                )}
+              </button>
+            );
+          })}
         </div>
       </nav>
     </div>

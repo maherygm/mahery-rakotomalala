@@ -15,10 +15,7 @@ const SpotifyMusicPlayer = () => {
   };
 
   return (
-    <div
-      className="fixed right-4 top-4 lg:top-auto lg:bottom-4 transition-all duration-100 z-50
- "
-    >
+    <div>
       {/* Icône musique si lecteur fermé */}
       {!isOpen && (
         <button
