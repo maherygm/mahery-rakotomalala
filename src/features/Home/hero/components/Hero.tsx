@@ -42,7 +42,7 @@ export default function Hero() {
 
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
             <h2 className="mt-2 text-sm sm:text-base md:text-lg lg:text-xl font-medium">
-              Développeur Front-End & Designer UI/UX Full Stack
+              Front-End Developer & Full Stack UI/UX Designer
             </h2>
           </BoxReveal>
 
