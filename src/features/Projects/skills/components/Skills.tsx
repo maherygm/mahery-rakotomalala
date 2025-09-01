@@ -1,3 +1,6 @@
+import { h1 } from "framer-motion/client";
+import { TextAnimate } from "../../../../components/common/BLurIn";
+
 const SkillsSection = () => {
   const skillCards: SkillCard[] = [
     {
@@ -192,11 +195,18 @@ const SkillsSection = () => {
   };
 
   return (
-    <div className="min-h-screen p-4 sm:p-6 md:p-8">
+    <div className="  min-h-screen p-4 sm:p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+        <TextAnimate
+          animation="fadeIn"
+          by="word"
+          as={h1}
+          className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-10"
+          delay={0.2}
+          duration={0.5}
+        >
           My Skills
-        </h1>
+        </TextAnimate>
         {/* ✅ Grid responsive : 1 col sur mobile, 2 en sm, 4 en md+ */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-auto">
           {skillCards.map((card, index) => (

@@ -4,6 +4,8 @@ import webCup from "../../../../assets/images/superNovaWebCup.png";
 import sirius from "../../../../assets/images/sirius.png";
 import novawolrd from "../../../../assets/images/novawolrd.png";
 import Sentinelle from "../../../../assets/images/Sentinelle.png";
+import { TextAnimate } from "../../../../components/common/BLurIn";
+import { h2, p } from "framer-motion/client";
 type Particle = {
   id: number;
   left: number;
@@ -94,13 +96,20 @@ const Projet = () => {
         {/* Section Hero */}
         <section className="grid lg:grid-cols-3 gap-16 mb-20 items-center">
           <div data-aos="fade-up" className="lg:col-span-2">
-            <h1 className="text-4xl lg:text-6xl font-light leading-tight  mb-0 animate-fade-in-left">
-              Driven by curiosity and a love for design, I create simple,
-              functional, and visually striking digital experiences. As a
-              student, I'm always learning and exploring new ideas.
-            </h1>
+            <TextAnimate
+              animation="fadeIn"
+              by="word"
+              as={p}
+              className="text-4xl  lg:text-6xl font-light leading-tight  mb-0 animate-fade-in-left"
+              delay={0.2}
+              duration={1}
+            >
+              {`Driven by curiosity and a love for design, 
+I create simple,functional, and visually striking digital experiences. 
+As a student, I'm always learning and exploring new ideas.
+              `}
+            </TextAnimate>
           </div>
-
           <div
             data-aos="fade-up"
             className="backdrop-blur-xl  border  rounded-3xl p-10  hover:transform hover:-translate-y-2 transition-all duration-300 animate-fade-in-right"
@@ -121,9 +130,16 @@ const Projet = () => {
 
         {/* Section Projets */}
         <section>
-          <h2 className="text-5xl lg:text-7xl font-black mb-6 animate-fade-in-up">
+          <TextAnimate
+            animation="fadeIn"
+            by="word"
+            as={h2}
+            className="text-5xl lg:text-7xl font-black mb-6 animate-fade-in-up"
+            delay={0.5}
+            duration={0.5}
+          >
             Impressive Works
-          </h2>
+          </TextAnimate>
           <p
             data-aos="fade-up"
             className="text-lg mb-16 max-w-2xl leading-relaxed animate-fade-in-up-delay"
